@@ -7,7 +7,11 @@ alias updagra='apt update && apt upgrade'
 alias cd..='cd ..'
 
 
-## todo test ##
+## todo list ##
+##########################################################################
+# A few alias's and simple scripts for keeping a todolist in the terminal
+##########################################################################
+
 alias todo='echo - [_]"$1">> ~/todo.txt'
 alias todolist='cat ~/todo.txt'
 alias todobackup='cp -v ~/todo.txt ~/todo.backup'
@@ -62,7 +66,6 @@ xterm*|rxvt*)
 esac
 
 export PATH=$HOME/local/bin:$PATH
-export PATH=$HOME/local/bin:$PATH
 
-export NVM_DIR="/home/nagiza/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
