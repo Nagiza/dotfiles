@@ -3,6 +3,8 @@
 #	.config/
 #			awesome/
 #			terminator/
+#			dunst/
+#			ranger/
 #	.i3
 #	Scripts/
 #	.conkyrc
@@ -17,6 +19,8 @@
 
 rsync -av ~/.config/awesome\
 	  ~/.config/terminator\
+	  ~/.config/dunst\
+	  ~/.config/ranger\
   	  ~/.i3\
 	  ~/Scripts\
 	  ~/.conkyrc\
@@ -25,4 +29,5 @@ rsync -av ~/.config/awesome\
 	  ~/.bashrc\
 	  ~/.vimrc\
 	  ~/.vim\
+	  ~/testdir\
 	  ~/Copy/Backup/

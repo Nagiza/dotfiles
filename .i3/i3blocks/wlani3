@@ -1,0 +1,13 @@
+#!/bin/bash
+
+wlan1Che=`iw dev | grep -wo "wlan1"`
+#wlan1link=`iw dev wlan1 link | grep SSID | awk '{print $2}'`
+wlan0link=`iw dev wlan0 link | grep SSID | awk '{print $2}'`
+
+if [[ "$wlan1Che" != "" ]]; then
+	echo "wrong" #"$wlan1link"
+else
+	echo "$wlan0link"
+	#echo "#A8FF00"
+fi
+

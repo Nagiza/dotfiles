@@ -1,0 +1,19 @@
+#!/bin/bash
+
+MUTE=` amixer -D pulse get Master | grep -E -o "\["on]; amixer -D pulse get Master | grep -E -o "\["off]`
+
+UTE=`echo "$MUTE" | sed 's:\[::g' | sed 's:\]::g' | uniq`
+
+VOL=`amixer -D pulse get Master | grep -E -o '[0-9][0-9]?%' | uniq`
+
+#amixer -D pulse get Master | grep -E -o "\["on] | sed 's:\[::g' | sed 's:\]::g' | uniq
+
+#echo "$VOL"
+echo "$UTE"
+
+#if [[ "$UTE" == "on" ]]; then
+#    echo "" #echo speaker symbol
+#else
+#    echo "" #echo speaker off symbol
+#fi
+

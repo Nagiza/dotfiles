@@ -23,3 +23,28 @@ Commands for audio control
 amixer -D pulse sset Master 5%+
 amixer -D pulse sset Master 5%-
 amixer -D pulse sset Master toggle
+
+Cut a single character or word from stdin
+A single character from stdin, numbered from 1 and onwards
+cut -c1
+
+The fourth word cut from stdin, words delimited by spaces ( ' ' )
+cut -d' ' -f4
+
+amixer -D pulse get Master | tail -n 1 | awk '{print }' | tr [ ' ' | tr ] ' '
+
+synclient to configure touchpad options
+
+Count the number "things" in a file using wc
+Count lines:
+    wc -l file
+ Count words:
+    wc -w file
+
+
+Toggle Between Directories
+"Linux 101 Hacks: Hack 4."
+    cd -
+
+To find connected audio devices
+pacmd list-sinks | grep -e 'name:' -e 'index'

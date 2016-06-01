@@ -1,5 +1,4 @@
-#!/bin/bash
-## test ##
+## # test ##
 
 # 1.
 # grep -e $1 ~/todo.txt |\
