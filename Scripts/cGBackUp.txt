@@ -1,0 +1,57 @@
+## # test ##
+
+# 1.
+# grep -e $1 ~/todo.txt |\
+# awk /a/ {print $1 $2}
+
+# 2.
+# awk '/test/{print $1 $4 $5 $6 $7 $8 $9}' ~/todo.txt
+
+# 3. 
+#Finds the wanted task
+cat ~/todo.txt | grep $1 >/tmp/test2.txt
+#Removes the task from todo (taken from ~/Scripts/todoremove.sh)
+cat ~/todo.txt | grep -v $1 >/tmp/test.txt
+cp /tmp/test.txt ~/todo.txt
+# replaces _ with X in tmp file and appends the wanted task to the todo file
+sed 's/_/X/g' /tmp/test2.txt >> ~/todo.txt 
+
+# 4. (optimizing the 3. version)
+#Finds the wanted task
+# grep $1 ~/todo.txt >/tmp/test2.txt
+#Removes the task from todo (taken from ~/Scripts/todoremove.sh)
+# cat ~/todo.txt | grep -v $1 >/tmp/test.txt
+# cp /tmp/test.txt ~/todo.txt
+# replaces _ with X in tmp file and appends the wanted task to the todo file
+# sed 's/_/X/g' /tmp/test2.txt >> ~/todo.txt ## backup script ##
+#Locations to backup:
+#	.config/
+#			awesome/
+#			terminator/
+#	Scripts/
+#	.conkyrc
+#   Documents/
+#	todo.txt
+#
+#Save to ~/Copy/Backup/
+##
+
+rsyncReplace a word/frase/single char from previous command and run the modified again replacing foo with bar
+^foo^bar
+
+Run previous command, usually used for forgotten sudo.
+!!
+
+Run part of previous command, base 0
+!:'number'
+
+Install package with the suggested packages as dependancies*.
+sudo apt-get install --install-suggests <packageName>
+
+Find a file ending in .iso from . recursivly
+find . -name '*.iso'
+rm *.tdo *.thm *.out *.aux *.log *.run.xml *.bib *.toc *.synctex.gz
+#!/bin/bash
+cat ~/todo.txt | grep -v $1 >/tmp/test.txt
+cp /tmp/test.txt ~/todo.txtcat ~/todo.txt | sort > /tmp/tmp.todo
+mv /tmp/tmp.todo ~/todo.txt
